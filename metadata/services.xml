@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="external.http.addresses">
+        <url>https://www.new-dev.com/external/addresses.php</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">STZ/k07GS5irtnqKqYvX46jbbVQds6fQ0MRiU30Ki9s=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="external.http.profiles">
+        <url>https://www.new-dev.com/external/profiles.php</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">MG2sAFZPaUUgrw5HG+mPR5uEnDf99Oj7O8s889CVOjQ=</password>
+    </service-credential>
+
+    <service-profile service-profile-id="external.http.addresses">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="external.http.profiles">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>2000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>2000</cb-millis>
+    </service-profile>
+
+    <service service-id="external.http.addresses">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>external</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>external.http.addresses</profile-id>
+        <credential-id>external.http.addresses</credential-id>
+    </service>
+
+    <service service-id="external.http.profiles">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>external</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>external.http.profiles</profile-id>
+        <credential-id>external.http.profiles</credential-id>
+    </service>
+
+</services>
